@@ -10,13 +10,13 @@ from pydantic import BaseModel
 
 
 class DishDetails(BaseModel):
-    name: str
-    amount: int
+    food_name: str
+    food_amount: int
 
 
 class Detail(BaseModel):
-    name: str
-    details: DishDetails
+    dish_name: str
+    dish_details: DishDetails
 
 
 class Item(BaseModel):
@@ -76,9 +76,9 @@ async def create_item(item: Item):
                         }
     }
     '''
-    details = {'name': item.details[0].name,
-               'food': item.details[0].details.amount,
-               'amount': item.details[0].details.name}
+    details = {'name': item.details[0].dish_name,
+               'food': item.details[0].dish_details.food_name,
+               'amount': item.details[0].dish_details.food_amount}
     time_value = datetime.now() if item.time == 'now' else item.time
     meals.append({time_value: details})
     return item

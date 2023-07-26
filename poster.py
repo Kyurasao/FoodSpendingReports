@@ -1,9 +1,8 @@
 import string
 from datetime import datetime, timedelta
 from random import randint, choice
-#
+
 import requests
-# from faker import Faker
 
 DISH_NAME = ['Dish_1', 'Dish_2', 'Dish_3', 'Dish_4']
 

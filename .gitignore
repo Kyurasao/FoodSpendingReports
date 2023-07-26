@@ -1,4 +1,4 @@
 .idea
-/test_ignore.txt
-/venv/
+venv
 __pycache__
+test_ignore.txt

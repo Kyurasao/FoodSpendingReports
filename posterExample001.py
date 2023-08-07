@@ -36,7 +36,7 @@ def amount_generator():
 
 def example001():
     data = {
-        "food": food_generator(),
+        "name": food_generator()
     }
     r = requests.post(LINK, json=data)
     return r.text

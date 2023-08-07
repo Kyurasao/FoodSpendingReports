@@ -9,6 +9,10 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 
 
+class Example001(BaseModel):
+    name: str
+
+
 class DishDetails(BaseModel):
     food_name: str
     food_amount: int
@@ -61,6 +65,11 @@ async def create_item(item: Item):
     time_value = datetime.now() if item.time == 'now' else item.time
     meals.append({time_value: details})
     return item
+
+
+@app.post("/Example001")
+async def example(item_Example001: Example001):
+    return item_Example001
 
 
 if __name__ == "__main__":

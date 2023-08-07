@@ -54,28 +54,7 @@ async def meal(item_id: int):
 async def create_item(item: Item):
     # преобраховать данные из item в формат данных из db.json
     # добавить преобразованные данные в expenses
-    '''
-    {
-    "22.07.2023 22:49:01": {
-      "Dish 1": {
-          "tomato": "100",
-          "cucumber": "100"
-                },
-      "Dish 2": {
-          "beef": "100",
-          "potato": "100",
-          "onion": "100"
-                },
-      "Dish 3": {
-          "coffee": "100",
-          "pie": "100"
-                },
-      "Dish 4": {
-          "apple": "100"
-                }
-                        }
-    }
-    '''
+
     details = {'name': item.details[0].dish_name,
                'food': item.details[0].dish_details.food_name,
                'amount': item.details[0].dish_details.food_amount}

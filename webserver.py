@@ -13,6 +13,10 @@ class Example001(BaseModel):
     name: str
 
 
+class Example002(BaseModel):
+    list_of_names: List[str]
+
+
 class DishDetails(BaseModel):
     food_name: str
     food_amount: int
@@ -68,8 +72,13 @@ async def create_item(item: Item):
 
 
 @app.post("/Example001")
-async def example(item_Example001: Example001):
-    return item_Example001
+async def example(item: Example001):
+    return item
+
+
+@app.post("/Example002")
+async def example(item: Example002):
+    return item
 
 
 if __name__ == "__main__":

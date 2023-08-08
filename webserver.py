@@ -17,6 +17,11 @@ class Example002(BaseModel):
     list_of_names: List[str]
 
 
+class Example003(BaseModel):
+    example001: Example001
+    example002: Example002
+
+
 class DishDetails(BaseModel):
     food_name: str
     food_amount: int
@@ -78,6 +83,11 @@ async def example(item: Example001):
 
 @app.post("/Example002")
 async def example(item: Example002):
+    return item
+
+
+@app.post("/Example003")
+async def example(item: Example003):
     return item
 
 

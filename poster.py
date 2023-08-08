@@ -22,26 +22,28 @@ def time_generator():
     return random_time if choice([1, 2]) == 1 else random_string
 
 
-def name_generator():
+def dish_name_generator():
     return choice(DISH_NAME)
 
 
-def food_generator():
+def food_name_generator():
     return choice(FOOD_NAME)
 
 
-def amount_generator():
+def food_amount_generator():
     return str(randint(1, 10))
 
 
 def create():
-    # какой тут формат вложений
-    # нужно также как и в вебсервере?
     data = {
         "time": time_generator(),
-        "name": name_generator(),
-        "food": food_generator(),
-        "amount": amount_generator()
+        "details": [{
+            "dish_name": dish_name_generator(),
+            "dish_details": {
+                "food_name": food_name_generator(),
+                "food_amount": food_amount_generator()
+            }
+        }]
     }
     r = requests.post(LINK, json=data)
     return r.text

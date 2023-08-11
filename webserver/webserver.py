@@ -38,7 +38,7 @@ class Item(BaseModel):
 
 
 app = FastAPI()
-p = Path('db.json')
+p = Path('../db.json')
 with p.open('r') as file:
     file_data = file.read()
     meals: List = json.loads(file_data) if file_data else []

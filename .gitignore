@@ -1,6 +1,4 @@
 .idea
 venv
 __pycache__
-test_ignore_1.py
-test_ignore_2.py
-tutorial.db
+test
